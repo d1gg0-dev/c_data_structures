@@ -69,15 +69,15 @@ typedef const void *cptr; // Generic pointer to read-only data
 // ---------------------------------------------------------------------------
 // These typedefs define interfaces for reusable, generic data structures.
 //
-// CompareFn: used to compare two elements (return <0, 0, >0).
-// DestroyFn: used to release memory or resources held by an element.
-// PrintFn:   used for debugging and logging of elements.
-// HashFn:    used to generate a hash value for hash-based structures.
+// compare_fn: used to compare two elements (return <0, 0, >0).
+// destroy_fn: used to release memory or resources held by an element.
+// print_fn:   used for debugging and logging of elements.
+// hash_fn:    used to generate a hash value for hash-based structures.
 
-typedef int (*CompareFn)(cptr a, cptr b);
-typedef void (*DestroyFn)(ptr data);
-typedef void (*PrintFn)(cptr data);
-typedef u64 (*HashFn)(cptr data, usize size);
+typedef int (*compare_fn)(cptr a, cptr b);
+typedef void (*destroy_fn)(ptr data);
+typedef void (*print_fn)(cptr data);
+typedef u64 (*hash_fn)(cptr data, usize size);
 
 // ---------------------------------------------------------------------------
 // SECTION 6: Generic data container structure.
