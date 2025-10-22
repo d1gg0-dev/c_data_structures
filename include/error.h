@@ -82,7 +82,7 @@ typedef struct
 //     return RESULT_ERROR(DS_ERROR_NOT_FOUND, "Element not found in hash
 //     table");
 
-#define RESULT_SUCCESS ((Result){DS_SUCCESS, "Success", __FILE__, __LINE__})
+#define RESULT_SUCCESS ((Result){DS_SUCCESS, "Success.", __FILE__, __LINE__})
 #define RESULT_ERROR(code, msg) ((Result){code, msg, __FILE__, __LINE__})
 
 // ---------------------------------------------------------------------------
@@ -116,9 +116,7 @@ bool result_is_error(
     {                                                                          \
         Result _result = (expr);                                               \
         if(result_is_error(_result))                                           \
-        {                                                                      \
             return _result;                                                    \
-        }                                                                      \
     } while(0)
 
 // ---------------------------------------------------------------------------
@@ -138,9 +136,7 @@ bool result_is_error(
     do                                                                         \
     {                                                                          \
         if(!(condition))                                                       \
-        {                                                                      \
             return RESULT_ERROR(DS_ERROR_INVALID_ARGUMENT, message);           \
-        }                                                                      \
     } while(0)
 
-#endif // DATA_STRUCTURES_ERROR_H
+#endif // !DATA_STRUCTURES_ERROR_H

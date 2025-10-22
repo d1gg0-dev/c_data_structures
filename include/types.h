@@ -133,4 +133,4 @@ DECLARE_TYPE(i32);  // Array of 32-bit integers
 DECLARE_TYPE(f64);  // Array of 64-bit floating-point numbers
 DECLARE_TYPE(byte); // Array of bytes (useful for buffers or raw data)
 
-#endif // DATA_STRUCTURES_TYPES_H
+#endif // !DATA_STRUCTURES_TYPES_H
